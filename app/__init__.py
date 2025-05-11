@@ -19,7 +19,7 @@ mail = Mail()
 
 def create_app():
     app = Flask(__name__, template_folder='../views', static_folder='../static')
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://Admin_conjuntoresidencial:Conjuntoresidencial*@localhost:3306/conjunto_residencial'
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv ('DATABASE_URL=postgresql://admin_conjuntoresidencial:VJbnDCcjIaW1gRmnZP16OcHfngUeu9DX@dpg-d0g1jlqdbo4c73aub13g-a.render.com:5432/conjunto_residencial_ocb8')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0  # Para desarrollo, en producción usa caché
 
